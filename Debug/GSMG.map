@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v16.9.0                     
 ******************************************************************************
->> Linked Mon Jul 24 12:52:29 2017
+>> Linked Tue Jul 25 12:57:03 2017
 
 OUTPUT FILE NAME:   <GSMG.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000a744
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000a748
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
   RAM                   00001c00   00000ffe  00000db4  0000024a  RWIX
-  FLASH                 00008000   00007f80  00002c96  000052ea  RWIX
+  FLASH                 00008000   00007f80  00002ccc  000052b4  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -162,162 +162,163 @@ section   page    origin      length       input sections
                   00002bac    00000002     rts430x_lc_sd_eabi.lib : boot.obj (.stack)
                   00002bae    0000004e     --HOLE--
 
-.text      0    00008000    00002970     
-                  00008000    00000274     atcommands.obj (.text:ReloadModem)
-                  00008274    00000194     rts430x_lc_sd_eabi.lib : strtoul.obj (.text:strtoul)
-                  00008408    0000018e     mmc.obj (.text:mmcReadCardSize)
-                  00008596    0000015a     bufferspi.obj (.text:SParseBuffer)
-                  000086f0    0000013a     atcommands.obj (.text:SendData)
-                  0000882a    0000010e     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:_setfield)
-                  00008938    000000ee                            : copy_decompress_lzss.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00008a26    000000ea     buffer.obj (.text:ParseBuffer)
-                  00008b10    000000de     rts430x_lc_sd_eabi.lib : fputs.obj (.text:fputs)
-                  00008bee    000000de     atcommands.obj (.text:my_sprintf)
-                  00008ccc    000000da     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:__TI_printfi_minimal)
-                  00008da6    000000cc                            : setvbuf.obj (.text:setvbuf)
-                  00008e72    000000c4                            : _printfi_min.obj (.text:_pproc_diouxp)
-                  00008f36    000000b2                            : cpy_tbl.obj (.text:copy_in)
-                  00008fe8    000000ae                            : memory.obj (.text:malloc)
-                  00009096    0000009c                            : trgdrv.obj (.text:HOSTlseek)
-                  00009132    00000096                            : autoinit_wdt.obj (.text:_auto_init_hold_wdt)
-                  000091c8    00000090     spi.obj (.text:spi_init)
-                  00009258    0000008c     rts430x_lc_sd_eabi.lib : fputc.obj (.text:fputc)
-                  000092e4    0000008a     Lifo.obj (.text:Lifo_Get)
-                  0000936e    0000008a     sdcard.obj (.text:sdcard_init)
-                  000093f8    00000082     cc430x613x_dma_05.obj (.text:dma_init)
-                  0000947a    00000082     ustate.obj (.text:uStateInit)
-                  000094fc    00000080     rts430x_lc_sd_eabi.lib : memory.obj (.text:free)
-                  0000957c    0000007a                            : _io_perm.obj (.text:__TI_wrt_ok)
-                  000095f6    00000078     mmc.obj (.text:mmcReadBlock)
-                  0000966e    00000078     mmc.obj (.text:mmcWriteBlock)
-                  000096e6    0000006a     rts430x_lc_sd_eabi.lib : trgdrv.obj (.text:HOSTrename)
-                  00009750    0000006a                            : fseek.obj (.text:fseek)
-                  000097ba    00000068                            : fclose.obj (.text:__TI_closefile)
-                  00009822    00000064                            : trgdrv.obj (.text:HOSTopen)
-                  00009886    00000064     mmc.obj (.text:mmcGoIdle)
-                  000098ea    00000062     rts430x_lc_sd_eabi.lib : fflush.obj (.text:__TI_doflush)
-                  0000994c    00000060                            : trgdrv.obj (.text:HOSTwrite)
-                  000099ac    0000005e                            : trgdrv.obj (.text:HOSTread)
-                  00009a0a    0000005e     mmc.obj (.text:mmcCheckBusy)
-                  00009a68    0000005a     Lifo.obj (.text:Lifo_Add)
-                  00009ac2    00000058     rts430x_lc_sd_eabi.lib : div32u.obj (.text)
-                  00009b1a    00000056     atcommands.obj (.text:modem_reset_r)
-                  00009b70    00000054     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:getdevice)
-                  00009bc4    0000004c     Lifo.obj (.text:UseLifo)
-                  00009c10    0000004a     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:close)
-                  00009c5a    0000004a     mmc.obj (.text:mmcSendCmd)
-                  00009ca4    0000004a     mmc.obj (.text:mmcSetBlockLength)
-                  00009cee    00000048     sdcard.obj (.text:AddSdCard)
-                  00009d36    00000048     sdcard.obj (.text:GetSdCard)
-                  00009d7e    00000048     rts430x_lc_sd_eabi.lib : exit.obj (.text:exit)
-                  00009dc6    00000046                            : trgdrv.obj (.text:HOSTclose)
-                  00009e0c    00000046     mmc.obj (.text:mmcInit)
-                  00009e52    00000044     hal_SPI.obj (.text:spi_bitbang_inout)
-                  00009e96    00000042     rts430x_lc_sd_eabi.lib : trgdrv.obj (.text:HOSTunlink)
-                  00009ed8    00000042     spi.obj (.text:_isr:DMA_ISR)
-                  00009f1a    00000040     rts430x_lc_sd_eabi.lib : cpy_util.obj (.text:__memcpy_far)
-                  00009f5a    00000040                            : printf.obj (.text:printf)
-                  00009f9a    00000040     spi.obj (.text:spi_task)
-                  00009fda    0000003e     rts430x_lc_sd_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
-                  0000a018    0000003e     cc430x613x_dma_05.obj (.text:dma_rcv)
-                  0000a056    0000003e     rts430x_lc_sd_eabi.lib : asr32.obj (.text:l_asr_const)
-                  0000a094    0000003e                            : lsl32.obj (.text:l_lsl_const)
-                  0000a0d2    0000003e                            : lsr32.obj (.text:l_lsr_const)
-                  0000a110    0000003c                            : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
-                  0000a14c    00000038     atcommands.obj (.text:data_commandT1)
-                  0000a184    00000038     rts430x_lc_sd_eabi.lib : memory.obj (.text:minit)
-                  0000a1bc    00000036     sdcard.obj (.text:AddSdCardBase)
-                  0000a1f2    00000036     bufferspi.obj (.text:SBGet)
-                  0000a228    00000036     rts430x_lc_sd_eabi.lib : strstr.obj (.text:strstr)
-                  0000a25e    00000034     sdcard.obj (.text:GetSdCardBase)
-                  0000a292    00000034     main.obj (.text:_isr:TIMER1_A0_ISR)
-                  0000a2c6    00000034     cc430x613x_dma_05.obj (.text:dma_send)
-                  0000a2fa    00000034     main.obj (.text:led_toggle)
-                  0000a32e    00000034     hal_SPI.obj (.text:spiSendFrame)
-                  0000a362    00000032     rts430x_lc_sd_eabi.lib : fopen.obj (.text:__TI_cleanup)
-                  0000a394    00000030     hal_SPI.obj (.text:spiReadFrame)
-                  0000a3c4    0000002e     main.obj (.text:PortsInit)
-                  0000a3f2    0000002e     rts430x_lc_sd_eabi.lib : trgmsg.obj (.text:__TI_writemsg)
-                  0000a420    0000002e                            : lowlev.obj (.text:finddevice)
-                  0000a44e    0000002e     main.obj (.text:params_init)
-                  0000a47c    0000002c     spi.obj (.text:CheckCrc)
-                  0000a4a8    0000002c     rts430x_lc_sd_eabi.lib : trgmsg.obj (.text:__TI_readmsg)
-                  0000a4d4    0000002c     main.obj (.text:init)
-                  0000a500    0000002c     rts430x_lc_sd_eabi.lib : strncpy.obj (.text:strncpy)
-                  0000a52c    0000002a     atcommands.obj (.text:modem_down)
-                  0000a556    0000002a     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:unlink)
-                  0000a580    00000026     bufferspi.obj (.text:SBAdd)
-                  0000a5a6    00000026     bufferspi.obj (.text:SBInit)
-                  0000a5cc    00000026     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:lseek)
-                  0000a5f2    00000024     Lifo.obj (.text:Lifo_Used)
-                  0000a616    00000024     main.obj (.text:int_init)
-                  0000a63a    00000024     mmc.obj (.text:mmcGetResponse)
-                  0000a65e    00000024     rts430x_lc_sd_eabi.lib : mult32_f5hw.obj (.text)
-                  0000a682    00000024                            : lowlev.obj (.text:write)
-                  0000a6a6    00000022     mmc.obj (.text:mmcGetXXResponse)
-                  0000a6c8    00000020     cc430x613x_dma_05.obj (.text:set_uart_9600)
-                  0000a6e8    00000020     main.obj (.text:wait_ms)
-                  0000a708    0000001e     cc430x613x_dma_05.obj (.text:set_uart_57600)
-                  0000a726    0000001e     spi.obj (.text:spi_dma_rcv)
-                  0000a744    0000001c     rts430x_lc_sd_eabi.lib : boot_special.obj (.text:_isr:_c_int00_noargs)
-                  0000a760    0000001c     buffer.obj (.text:findchar)
-                  0000a77c    0000001a     rts430x_lc_sd_eabi.lib : memccpy.obj (.text:memccpy)
-                  0000a796    0000001a     buffer.obj (.text:parse_bcl)
-                  0000a7b0    0000001a     spi.obj (.text:spi_clear_buff)
-                  0000a7ca    0000001a     rts430x_lc_sd_eabi.lib : strchr.obj (.text:strchr)
-                  0000a7e4    00000018     bufferspi.obj (.text:Modify)
-                  0000a7fc    00000018     bufferspi.obj (.text:SBUsed)
-                  0000a814    00000018     rts430x_lc_sd_eabi.lib : mult16_f5hw.obj (.text)
-                  0000a82c    00000018                            : strcmp.obj (.text:strcmp)
-                  0000a844    00000016     buffer.obj (.text:BInit)
-                  0000a85a    00000016     rts430x_lc_sd_eabi.lib : div16u.obj (.text)
-                  0000a870    00000016     ustate.obj (.text:uStateKeep)
-                  0000a886    00000014     main.obj (.text:leds_init)
-                  0000a89a    00000014     rts430x_lc_sd_eabi.lib : memchr.obj (.text:memchr)
-                  0000a8ae    00000014                            : memset.obj (.text:memset)
-                  0000a8c2    00000012     main.obj (.text:main)
-                  0000a8d4    00000012     rts430x_lc_sd_eabi.lib : memcpy.obj (.text:memcpy)
-                  0000a8e6    00000010                            : lsr32.obj (.text:l_lsr)
-                  0000a8f6    00000010                            : strcpy.obj (.text:strcpy)
-                  0000a906    0000000e                            : strlen.obj (.text:strlen)
-                  0000a914    0000000e     main.obj (.text:wd_reset)
-                  0000a922    0000000a     main.obj (.text:key_pressed)
-                  0000a92c    0000000a     hal_SPI.obj (.text:spiSendByte)
-                  0000a936    00000008     rts430x_lc_sd_eabi.lib : isr_trap.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000a93e    00000008     main.obj (.text:leds_off)
-                  0000a946    00000008     main.obj (.text:leds_on)
-                  0000a94e    00000008     atcommands.obj (.text:modem_send_dataT1)
-                  0000a956    00000006     rts430x_lc_sd_eabi.lib : printf.obj (.text:_outc)
-                  0000a95c    00000006                            : exit.obj (.text:abort)
-                  0000a962    00000004                            : printf.obj (.text:_outs)
-                  0000a966    00000004                            : pre_init.obj (.text:_system_pre_init)
-                  0000a96a    00000002                            : _lock.obj (.text:_nop)
-                  0000a96c    00000002                            : startup.obj (.text:_system_post_cinit)
-                  0000a96e    00000002     hal_SPI.obj (.text:halSPISetup)
+.text      0    00008000    00002974     
+                  00008000    00000290     atcommands.obj (.text:ReloadModem)
+                  00008290    00000194     rts430x_lc_sd_eabi.lib : strtoul.obj (.text:strtoul)
+                  00008424    0000018e     mmc.obj (.text:mmcReadCardSize)
+                  000085b2    0000015a     bufferspi.obj (.text:SParseBuffer)
+                  0000870c    0000013a     atcommands.obj (.text:SendData)
+                  00008846    0000010e     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:_setfield)
+                  00008954    000000ee                            : copy_decompress_lzss.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00008a42    000000ea     buffer.obj (.text:ParseBuffer)
+                  00008b2c    000000de     rts430x_lc_sd_eabi.lib : fputs.obj (.text:fputs)
+                  00008c0a    000000de     atcommands.obj (.text:my_sprintf)
+                  00008ce8    000000da     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.text:__TI_printfi_minimal)
+                  00008dc2    000000cc                            : setvbuf.obj (.text:setvbuf)
+                  00008e8e    000000c4                            : _printfi_min.obj (.text:_pproc_diouxp)
+                  00008f52    000000b2                            : cpy_tbl.obj (.text:copy_in)
+                  00009004    000000ae                            : memory.obj (.text:malloc)
+                  000090b2    0000009c                            : trgdrv.obj (.text:HOSTlseek)
+                  0000914e    00000096                            : autoinit_wdt.obj (.text:_auto_init_hold_wdt)
+                  000091e4    00000090     spi.obj (.text:spi_init)
+                  00009274    0000008c     rts430x_lc_sd_eabi.lib : fputc.obj (.text:fputc)
+                  00009300    0000008a     Lifo.obj (.text:Lifo_Get)
+                  0000938a    0000008a     sdcard.obj (.text:sdcard_init)
+                  00009414    00000082     cc430x613x_dma_05.obj (.text:dma_init)
+                  00009496    00000082     ustate.obj (.text:uStateInit)
+                  00009518    00000080     rts430x_lc_sd_eabi.lib : memory.obj (.text:free)
+                  00009598    0000007a                            : _io_perm.obj (.text:__TI_wrt_ok)
+                  00009612    00000078     mmc.obj (.text:mmcReadBlock)
+                  0000968a    00000078     mmc.obj (.text:mmcWriteBlock)
+                  00009702    0000006a     rts430x_lc_sd_eabi.lib : trgdrv.obj (.text:HOSTrename)
+                  0000976c    0000006a                            : fseek.obj (.text:fseek)
+                  000097d6    00000068                            : fclose.obj (.text:__TI_closefile)
+                  0000983e    00000064                            : trgdrv.obj (.text:HOSTopen)
+                  000098a2    00000064     mmc.obj (.text:mmcGoIdle)
+                  00009906    00000062     rts430x_lc_sd_eabi.lib : fflush.obj (.text:__TI_doflush)
+                  00009968    00000060                            : trgdrv.obj (.text:HOSTwrite)
+                  000099c8    0000005e                            : trgdrv.obj (.text:HOSTread)
+                  00009a26    0000005e     mmc.obj (.text:mmcCheckBusy)
+                  00009a84    0000005a     Lifo.obj (.text:Lifo_Add)
+                  00009ade    00000058     rts430x_lc_sd_eabi.lib : div32u.obj (.text)
+                  00009b36    00000056     atcommands.obj (.text:modem_reset_r)
+                  00009b8c    00000054     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:getdevice)
+                  00009be0    0000004c     Lifo.obj (.text:UseLifo)
+                  00009c2c    0000004a     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:close)
+                  00009c76    0000004a     mmc.obj (.text:mmcSendCmd)
+                  00009cc0    0000004a     mmc.obj (.text:mmcSetBlockLength)
+                  00009d0a    00000048     sdcard.obj (.text:AddSdCard)
+                  00009d52    00000048     sdcard.obj (.text:GetSdCard)
+                  00009d9a    00000048     rts430x_lc_sd_eabi.lib : exit.obj (.text:exit)
+                  00009de2    00000046                            : trgdrv.obj (.text:HOSTclose)
+                  00009e28    00000046     mmc.obj (.text:mmcInit)
+                  00009e6e    00000044     hal_SPI.obj (.text:spi_bitbang_inout)
+                  00009eb2    00000042     rts430x_lc_sd_eabi.lib : trgdrv.obj (.text:HOSTunlink)
+                  00009ef4    00000042     spi.obj (.text:_isr:DMA_ISR)
+                  00009f36    00000040     rts430x_lc_sd_eabi.lib : cpy_util.obj (.text:__memcpy_far)
+                  00009f76    00000040                            : printf.obj (.text:printf)
+                  00009fb6    00000040     spi.obj (.text:spi_task)
+                  00009ff6    0000003e     rts430x_lc_sd_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000a034    0000003e     cc430x613x_dma_05.obj (.text:dma_rcv)
+                  0000a072    0000003e     rts430x_lc_sd_eabi.lib : asr32.obj (.text:l_asr_const)
+                  0000a0b0    0000003e                            : lsl32.obj (.text:l_lsl_const)
+                  0000a0ee    0000003e                            : lsr32.obj (.text:l_lsr_const)
+                  0000a12c    0000003c                            : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0000a168    00000038                            : memory.obj (.text:minit)
+                  0000a1a0    00000036     sdcard.obj (.text:AddSdCardBase)
+                  0000a1d6    00000036     bufferspi.obj (.text:SBGet)
+                  0000a20c    00000036     rts430x_lc_sd_eabi.lib : strstr.obj (.text:strstr)
+                  0000a242    00000034     sdcard.obj (.text:GetSdCardBase)
+                  0000a276    00000034     main.obj (.text:_isr:TIMER1_A0_ISR)
+                  0000a2aa    00000034     cc430x613x_dma_05.obj (.text:dma_send)
+                  0000a2de    00000034     main.obj (.text:led_toggle)
+                  0000a312    00000034     hal_SPI.obj (.text:spiSendFrame)
+                  0000a346    00000032     rts430x_lc_sd_eabi.lib : fopen.obj (.text:__TI_cleanup)
+                  0000a378    00000030     hal_SPI.obj (.text:spiReadFrame)
+                  0000a3a8    0000002e     main.obj (.text:PortsInit)
+                  0000a3d6    0000002e     rts430x_lc_sd_eabi.lib : trgmsg.obj (.text:__TI_writemsg)
+                  0000a404    0000002e                            : lowlev.obj (.text:finddevice)
+                  0000a432    0000002e     main.obj (.text:params_init)
+                  0000a460    0000002c     spi.obj (.text:CheckCrc)
+                  0000a48c    0000002c     rts430x_lc_sd_eabi.lib : trgmsg.obj (.text:__TI_readmsg)
+                  0000a4b8    0000002c     main.obj (.text:init)
+                  0000a4e4    0000002c     rts430x_lc_sd_eabi.lib : strncpy.obj (.text:strncpy)
+                  0000a510    0000002a     atcommands.obj (.text:modem_down)
+                  0000a53a    0000002a     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:unlink)
+                  0000a564    00000026     bufferspi.obj (.text:SBAdd)
+                  0000a58a    00000026     bufferspi.obj (.text:SBInit)
+                  0000a5b0    00000026     rts430x_lc_sd_eabi.lib : lowlev.obj (.text:lseek)
+                  0000a5d6    00000024     Lifo.obj (.text:Lifo_Used)
+                  0000a5fa    00000024     main.obj (.text:int_init)
+                  0000a61e    00000024     mmc.obj (.text:mmcGetResponse)
+                  0000a642    00000024     rts430x_lc_sd_eabi.lib : mult32_f5hw.obj (.text)
+                  0000a666    00000024                            : lowlev.obj (.text:write)
+                  0000a68a    00000022     mmc.obj (.text:mmcGetXXResponse)
+                  0000a6ac    00000020     atcommands.obj (.text:data_commandT1)
+                  0000a6cc    00000020     cc430x613x_dma_05.obj (.text:set_uart_9600)
+                  0000a6ec    00000020     main.obj (.text:wait_ms)
+                  0000a70c    0000001e     cc430x613x_dma_05.obj (.text:set_uart_57600)
+                  0000a72a    0000001e     spi.obj (.text:spi_dma_rcv)
+                  0000a748    0000001c     rts430x_lc_sd_eabi.lib : boot_special.obj (.text:_isr:_c_int00_noargs)
+                  0000a764    0000001c     buffer.obj (.text:findchar)
+                  0000a780    0000001a     rts430x_lc_sd_eabi.lib : memccpy.obj (.text:memccpy)
+                  0000a79a    0000001a     buffer.obj (.text:parse_bcl)
+                  0000a7b4    0000001a     spi.obj (.text:spi_clear_buff)
+                  0000a7ce    0000001a     rts430x_lc_sd_eabi.lib : strchr.obj (.text:strchr)
+                  0000a7e8    00000018     bufferspi.obj (.text:Modify)
+                  0000a800    00000018     bufferspi.obj (.text:SBUsed)
+                  0000a818    00000018     rts430x_lc_sd_eabi.lib : mult16_f5hw.obj (.text)
+                  0000a830    00000018                            : strcmp.obj (.text:strcmp)
+                  0000a848    00000016     buffer.obj (.text:BInit)
+                  0000a85e    00000016     rts430x_lc_sd_eabi.lib : div16u.obj (.text)
+                  0000a874    00000016     ustate.obj (.text:uStateKeep)
+                  0000a88a    00000014     main.obj (.text:leds_init)
+                  0000a89e    00000014     rts430x_lc_sd_eabi.lib : memchr.obj (.text:memchr)
+                  0000a8b2    00000014                            : memset.obj (.text:memset)
+                  0000a8c6    00000012     main.obj (.text:main)
+                  0000a8d8    00000012     rts430x_lc_sd_eabi.lib : memcpy.obj (.text:memcpy)
+                  0000a8ea    00000010                            : lsr32.obj (.text:l_lsr)
+                  0000a8fa    00000010                            : strcpy.obj (.text:strcpy)
+                  0000a90a    0000000e                            : strlen.obj (.text:strlen)
+                  0000a918    0000000e     main.obj (.text:wd_reset)
+                  0000a926    0000000a     main.obj (.text:key_pressed)
+                  0000a930    0000000a     hal_SPI.obj (.text:spiSendByte)
+                  0000a93a    00000008     rts430x_lc_sd_eabi.lib : isr_trap.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000a942    00000008     main.obj (.text:leds_off)
+                  0000a94a    00000008     main.obj (.text:leds_on)
+                  0000a952    00000008     atcommands.obj (.text:modem_send_dataT1)
+                  0000a95a    00000006     rts430x_lc_sd_eabi.lib : printf.obj (.text:_outc)
+                  0000a960    00000006                            : exit.obj (.text:abort)
+                  0000a966    00000004                            : printf.obj (.text:_outs)
+                  0000a96a    00000004                            : pre_init.obj (.text:_system_pre_init)
+                  0000a96e    00000002                            : _lock.obj (.text:_nop)
+                  0000a970    00000002                            : startup.obj (.text:_system_post_cinit)
+                  0000a972    00000002     hal_SPI.obj (.text:halSPISetup)
 
 .binit     0    00008000    00000000     
 
-.const     0    0000a970    000002b2     
-                  0000a970    00000101     rts430x_lc_sd_eabi.lib : ctype.obj (.const:.string:_ctypes_)
-                  0000aa71    00000001     --HOLE-- [fill = 0]
-                  0000aa72    000000dc     atcommands.obj (.const:.string)
-                  0000ab4e    0000004e     sdcard.obj (.const:.string)
-                  0000ab9c    0000002a     ustate.obj (.const:.string)
-                  0000abc6    00000017     atcommands.obj (.const:.string:$P$T0$3)
-                  0000abdd    00000001     --HOLE-- [fill = 0]
-                  0000abde    00000014     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.const:.string)
-                  0000abf2    00000010     buffer.obj (.const:.string)
-                  0000ac02    0000000e     bufferspi.obj (.const:.string)
-                  0000ac10    0000000c     spi.obj (.const:.string)
-                  0000ac1c    00000003     buffer.obj (.const:.string:OK_STR)
-                  0000ac1f    00000001     --HOLE-- [fill = 0]
-                  0000ac20    00000002     atcommands.obj (.const:.string:$P$T1$8)
+.const     0    0000a974    000002e4     
+                  0000a974    0000010e     atcommands.obj (.const:.string)
+                  0000aa82    00000101     rts430x_lc_sd_eabi.lib : ctype.obj (.const:.string:_ctypes_)
+                  0000ab83    00000001     --HOLE-- [fill = 0]
+                  0000ab84    0000004e     sdcard.obj (.const:.string)
+                  0000abd2    0000002a     ustate.obj (.const:.string)
+                  0000abfc    00000017     atcommands.obj (.const:.string:$P$T0$3)
+                  0000ac13    00000001     --HOLE-- [fill = 0]
+                  0000ac14    00000014     rts430x_lc_sd_eabi.lib : _printfi_min.obj (.const:.string)
+                  0000ac28    00000010     buffer.obj (.const:.string)
+                  0000ac38    0000000e     bufferspi.obj (.const:.string)
+                  0000ac46    0000000c     spi.obj (.const:.string)
+                  0000ac52    00000003     buffer.obj (.const:.string:OK_STR)
+                  0000ac55    00000001     --HOLE-- [fill = 0]
+                  0000ac56    00000002     atcommands.obj (.const:.string:$P$T1$8)
 
-.cinit     0    0000ac22    00000074     
-                  0000ac22    00000052     (.cinit..data.load) [load image, compression = lzss]
-                  0000ac74    0000000c     (__TI_handler_table)
-                  0000ac80    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  0000ac86    00000010     (__TI_cinit_table)
+.cinit     0    0000ac58    00000074     
+                  0000ac58    00000051     (.cinit..data.load) [load image, compression = lzss]
+                  0000aca9    00000001     --HOLE-- [fill = 0]
+                  0000acaa    0000000c     (__TI_handler_table)
+                  0000acb6    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000acbc    00000010     (__TI_cinit_table)
 
 .init_array 
 *          0    00008000    00000000     UNINITIALIZED
@@ -388,7 +389,7 @@ MODULE SUMMARY
        Module                     code    ro data   rw data
        ------                     ----    -------   -------
     .\
-       atcommands.obj             1356    245       8      
+       atcommands.obj             1360    295       8      
        main.obj                   386     2         1070   
        mmc.obj                    1120    0         0      
        cc430x613x_dma_05.obj      306     0         526    
@@ -400,7 +401,7 @@ MODULE SUMMARY
        ustate.obj                 152     42        12     
        hal_SPI.obj                180     0         1      
     +--+--------------------------+-------+---------+---------+
-       Total:                     5436    414       2342   
+       Total:                     5440    464       2342   
                                                            
     C:\ti\ccs700\ccsv7\tools\compiler\ti-cgt-msp430_16.9.0.LTS\lib\rts430x_lc_sd_eabi.lib
        _printfi_min.obj           684     20        0      
@@ -473,21 +474,21 @@ MODULE SUMMARY
                                                            
        Heap:                      0       0         320    
        Stack:                     0       0         80     
-       Linker Generated:          0       116       0      
+       Linker Generated:          0       115       0      
     +--+--------------------------+-------+---------+---------+
-       Grand Total:               10608   841       3508   
+       Grand Total:               10612   890       3508   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 0000ac86 records: 2, size/record: 8, table size: 16
-	.data: load addr=0000ac22, load size=00000052 bytes, run addr=00002710, run size=00000135 bytes, compression=lzss
-	.bss: load addr=0000ac80, load size=00000006 bytes, run addr=00001c00, run size=000009cf bytes, compression=zero_init
+__TI_cinit_table @ 0000acbc records: 2, size/record: 8, table size: 16
+	.data: load addr=0000ac58, load size=00000051 bytes, run addr=00002710, run size=00000135 bytes, compression=lzss
+	.bss: load addr=0000acb6, load size=00000006 bytes, run addr=00001c00, run size=000009cf bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 0000ac74 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 0000acaa records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -594,11 +595,11 @@ address   name
 000009c4  AESASTAT                       
 000009c5  AESASTAT_H                     
 000009c4  AESASTAT_L                     
-00009cee  AddSdCard                      
-0000a1bc  AddSdCardBase                  
-0000a844  BInit                          
-0000a95c  C$$EXIT                        
-0000a41c  C$$IO$$                        
+00009d0a  AddSdCard                      
+0000a1a0  AddSdCardBase                  
+0000a848  BInit                          
+0000a960  C$$EXIT                        
+0000a400  C$$IO$$                        
 000008c0  CBCTL0                         
 000008c1  CBCTL0_H                       
 000008c0  CBCTL0_L                       
@@ -621,7 +622,7 @@ address   name
 00000154  CRCINIRES                      
 00000155  CRCINIRES_H                    
 00000154  CRCINIRES_L                    
-0000a47c  CheckCrc                       
+0000a460  CheckCrc                       
 00000510  DMA0CTL                        
 00000511  DMA0CTL_H                      
 00000510  DMA0CTL_L                      
@@ -670,7 +671,7 @@ address   name
 0000050e  DMAIV                          
 0000050f  DMAIV_H                        
 0000050e  DMAIV_L                        
-00009ed8  DMA_ISR                        
+00009ef4  DMA_ISR                        
 00000140  FCTL1                          
 00000141  FCTL1_H                        
 00000140  FCTL1_L                        
@@ -681,15 +682,15 @@ address   name
 00000147  FCTL4_H                        
 00000146  FCTL4_L                        
 000025c2  Fill_lifo_data                 
-00009d36  GetSdCard                      
-0000a25e  GetSdCardBase                  
-00009dc6  HOSTclose                      
-00009096  HOSTlseek                      
-00009822  HOSTopen                       
-000099ac  HOSTread                       
-000096e6  HOSTrename                     
-00009e96  HOSTunlink                     
-0000994c  HOSTwrite                      
+00009d52  GetSdCard                      
+0000a242  GetSdCardBase                  
+00009de2  HOSTclose                      
+000090b2  HOSTlseek                      
+0000983e  HOSTopen                       
+000099c8  HOSTread                       
+00009702  HOSTrename                     
+00009eb2  HOSTunlink                     
+00009968  HOSTwrite                      
 00001e0e  KeepTestData1                  
 00000a04  LCDBBLKCTL                     
 00000a05  LCDBBLKCTL_H                   
@@ -773,9 +774,9 @@ address   name
 000025a2  LHead                          
 000025a4  LLastHead                      
 000025a6  LastHead                       
-00009a68  Lifo_Add                       
-000092e4  Lifo_Get                       
-0000a5f2  Lifo_Used                      
+00009a84  Lifo_Add                       
+00009300  Lifo_Get                       
+0000a5d6  Lifo_Used                      
 000004c4  MAC                            
 000004da  MAC32H                         
 000004db  MAC32H_H                       
@@ -816,8 +817,8 @@ address   name
 000004c1  MPY_H                          
 000004c0  MPY_L                          
 000025c3  MST_Data                       
-0000a7e4  Modify                         
-0000ac1c  OK_STR                         
+0000a7e8  Modify                         
+0000ac52  OK_STR                         
 000004c8  OP2                            
 000004e2  OP2H                           
 000004e3  OP2H_H                         
@@ -961,8 +962,8 @@ address   name
 0000012e  PMMRIE                         
 0000012f  PMMRIE_H                       
 0000012e  PMMRIE_L                       
-00008a26  ParseBuffer                    
-0000a3c4  PortsInit                      
+00008a42  ParseBuffer                    
+0000a3a8  PortsInit                      
 00000158  RCCTL0                         
 00000159  RCCTL0_H                       
 00000158  RCCTL0_L                       
@@ -1092,10 +1093,10 @@ address   name
 000004b6  RTCYEAR_L                      
 0000248c  RcvBuff                        
 00008000  ReloadModem                    
-0000a580  SBAdd                          
-0000a1f2  SBGet                          
-0000a5a6  SBInit                         
-0000a7fc  SBUsed                         
+0000a564  SBAdd                          
+0000a1d6  SBGet                          
+0000a58a  SBInit                         
+0000a800  SBUsed                         
 000025a8  SBuffSize                      
 00000100  SFRIE1                         
 00000101  SFRIE1_H                       
@@ -1109,7 +1110,7 @@ address   name
 000025aa  SHead                          
 000025c4  SLV_Data                       
 000024f0  SPI_RX_Buff0                   
-00008596  SParseBuffer                   
+000085b2  SParseBuffer                   
 0000252a  SRcvBuff                       
 000025ac  STail                          
 000004ce  SUMEXT                         
@@ -1157,7 +1158,7 @@ address   name
 0000019a  SYSUNIV                        
 0000019b  SYSUNIV_H                      
 0000019a  SYSUNIV_L                      
-000086f0  SendData                       
+0000870c  SendData                       
 00000352  TA0CCR0                        
 00000354  TA0CCR1                        
 00000356  TA0CCR2                        
@@ -1182,7 +1183,7 @@ address   name
 000003a0  TA1EX0                         
 000003ae  TA1IV                          
 00000390  TA1R                           
-0000a292  TIMER1_A0_ISR                  
+0000a276  TIMER1_A0_ISR                  
 0000201c  TestData1                      
 000005d0  UCA0ABCTL                      
 000005c6  UCA0BRW                        
@@ -1248,7 +1249,7 @@ address   name
 00000170  UCSCTL8                        
 00000171  UCSCTL8_H                      
 00000170  UCSCTL8_L                      
-00009bc4  UseLifo                        
+00009be0  UseLifo                        
 0000015c  WDTCTL                         
 0000015d  WDTCTL_H                       
 0000015c  WDTCTL_L                       
@@ -1258,19 +1259,19 @@ address   name
 00000140  __SYSMEM_SIZE                  
 UNDEFED   __TI_BINIT_Base                
 UNDEFED   __TI_BINIT_Limit               
-0000ac86  __TI_CINIT_Base                
-0000ac96  __TI_CINIT_Limit               
-0000ac74  __TI_Handler_Table_Base        
-0000ac80  __TI_Handler_Table_Limit       
+0000acbc  __TI_CINIT_Base                
+0000accc  __TI_CINIT_Limit               
+0000acaa  __TI_Handler_Table_Base        
+0000acb6  __TI_Handler_Table_Limit       
 UNDEFED   __TI_INITARRAY_Base            
 UNDEFED   __TI_INITARRAY_Limit           
-0000a936  __TI_ISR_TRAP                  
-0000a362  __TI_cleanup                   
+0000a93a  __TI_ISR_TRAP                  
+0000a346  __TI_cleanup                   
 00002828  __TI_cleanup_ptr               
-000097ba  __TI_closefile                 
-00008938  __TI_decompress_lzss           
-0000a110  __TI_decompress_none           
-000098ea  __TI_doflush                   
+000097d6  __TI_closefile                 
+00008954  __TI_decompress_lzss           
+0000a12c  __TI_decompress_none           
+00009906  __TI_doflush                   
 0000282c  __TI_dtors_ptr                 
 00002840  __TI_enable_exit_profile_output
 0000283c  __TI_ft_end                    
@@ -1293,176 +1294,176 @@ UNDEFED   __TI_INITARRAY_Limit
 0000fffa  __TI_int61                     
 0000fffc  __TI_int62                     
 ffffffff  __TI_pprof_out_hndl            
-00008ccc  __TI_printfi_minimal           
+00008ce8  __TI_printfi_minimal           
 ffffffff  __TI_prof_data_size            
 ffffffff  __TI_prof_data_start           
-0000a4a8  __TI_readmsg                   
+0000a48c  __TI_readmsg                   
 000023ec  __TI_tmpnams                   
-0000a3f2  __TI_writemsg                  
-0000957c  __TI_wrt_ok                    
-00009fda  __TI_zero_init                 
+0000a3d6  __TI_writemsg                  
+00009598  __TI_wrt_ok                    
+00009ff6  __TI_zero_init                 
 ffffffff  __c_args__                     
-00009f1a  __memcpy_far                   
-0000a85a  __mspabi_divu                  
-00009ac2  __mspabi_divul                 
-0000a814  __mspabi_mpyi_f5hw             
-0000a65e  __mspabi_mpyl_f5hw             
-0000a85a  __mspabi_remu                  
-00009ac2  __mspabi_remul                 
-0000a0cc  __mspabi_slll_1                
-0000a0a8  __mspabi_slll_10               
-0000a0a4  __mspabi_slll_11               
-0000a0a0  __mspabi_slll_12               
-0000a09c  __mspabi_slll_13               
-0000a098  __mspabi_slll_14               
-0000a094  __mspabi_slll_15               
-0000a0c8  __mspabi_slll_2                
-0000a0c4  __mspabi_slll_3                
-0000a0c0  __mspabi_slll_4                
-0000a0bc  __mspabi_slll_5                
-0000a0b8  __mspabi_slll_6                
-0000a0b4  __mspabi_slll_7                
-0000a0b0  __mspabi_slll_8                
-0000a0ac  __mspabi_slll_9                
-0000a08e  __mspabi_sral_1                
-0000a06a  __mspabi_sral_10               
-0000a066  __mspabi_sral_11               
-0000a062  __mspabi_sral_12               
-0000a05e  __mspabi_sral_13               
-0000a05a  __mspabi_sral_14               
-0000a056  __mspabi_sral_15               
-0000a08a  __mspabi_sral_2                
-0000a086  __mspabi_sral_3                
-0000a082  __mspabi_sral_4                
-0000a07e  __mspabi_sral_5                
-0000a07a  __mspabi_sral_6                
-0000a076  __mspabi_sral_7                
-0000a072  __mspabi_sral_8                
-0000a06e  __mspabi_sral_9                
-0000a8e6  __mspabi_srll                  
-0000a10a  __mspabi_srll_1                
-0000a0e6  __mspabi_srll_10               
-0000a0e2  __mspabi_srll_11               
-0000a0de  __mspabi_srll_12               
-0000a0da  __mspabi_srll_13               
-0000a0d6  __mspabi_srll_14               
-0000a0d2  __mspabi_srll_15               
-0000a106  __mspabi_srll_2                
-0000a102  __mspabi_srll_3                
-0000a0fe  __mspabi_srll_4                
-0000a0fa  __mspabi_srll_5                
-0000a0f6  __mspabi_srll_6                
-0000a0f2  __mspabi_srll_7                
-0000a0ee  __mspabi_srll_8                
-0000a0ea  __mspabi_srll_9                
-00009132  _auto_init_hold_wdt            
-0000a744  _c_int00_noargs                
-0000a970  _ctypes_                       
+00009f36  __memcpy_far                   
+0000a85e  __mspabi_divu                  
+00009ade  __mspabi_divul                 
+0000a818  __mspabi_mpyi_f5hw             
+0000a642  __mspabi_mpyl_f5hw             
+0000a85e  __mspabi_remu                  
+00009ade  __mspabi_remul                 
+0000a0e8  __mspabi_slll_1                
+0000a0c4  __mspabi_slll_10               
+0000a0c0  __mspabi_slll_11               
+0000a0bc  __mspabi_slll_12               
+0000a0b8  __mspabi_slll_13               
+0000a0b4  __mspabi_slll_14               
+0000a0b0  __mspabi_slll_15               
+0000a0e4  __mspabi_slll_2                
+0000a0e0  __mspabi_slll_3                
+0000a0dc  __mspabi_slll_4                
+0000a0d8  __mspabi_slll_5                
+0000a0d4  __mspabi_slll_6                
+0000a0d0  __mspabi_slll_7                
+0000a0cc  __mspabi_slll_8                
+0000a0c8  __mspabi_slll_9                
+0000a0aa  __mspabi_sral_1                
+0000a086  __mspabi_sral_10               
+0000a082  __mspabi_sral_11               
+0000a07e  __mspabi_sral_12               
+0000a07a  __mspabi_sral_13               
+0000a076  __mspabi_sral_14               
+0000a072  __mspabi_sral_15               
+0000a0a6  __mspabi_sral_2                
+0000a0a2  __mspabi_sral_3                
+0000a09e  __mspabi_sral_4                
+0000a09a  __mspabi_sral_5                
+0000a096  __mspabi_sral_6                
+0000a092  __mspabi_sral_7                
+0000a08e  __mspabi_sral_8                
+0000a08a  __mspabi_sral_9                
+0000a8ea  __mspabi_srll                  
+0000a126  __mspabi_srll_1                
+0000a102  __mspabi_srll_10               
+0000a0fe  __mspabi_srll_11               
+0000a0fa  __mspabi_srll_12               
+0000a0f6  __mspabi_srll_13               
+0000a0f2  __mspabi_srll_14               
+0000a0ee  __mspabi_srll_15               
+0000a122  __mspabi_srll_2                
+0000a11e  __mspabi_srll_3                
+0000a11a  __mspabi_srll_4                
+0000a116  __mspabi_srll_5                
+0000a112  __mspabi_srll_6                
+0000a10e  __mspabi_srll_7                
+0000a10a  __mspabi_srll_8                
+0000a106  __mspabi_srll_9                
+0000914e  _auto_init_hold_wdt            
+0000a748  _c_int00_noargs                
+0000aa82  _ctypes_                       
 00002788  _ftable                        
 00002830  _lock                          
-0000a96a  _nop                           
+0000a96e  _nop                           
 0000fffe  _reset_vector                  
 00002bac  _stack                         
 000025d0  _sys_memory                    
-0000a96c  _system_post_cinit             
-0000a966  _system_pre_init               
+0000a970  _system_post_cinit             
+0000a96a  _system_pre_init               
 00002834  _unlock                        
-0000a95c  abort                          
+0000a960  abort                          
 000025c5  auth_flag                      
 000025c6  bcl                            
 000025ae  cardSize                       
-00009c10  close                          
-00008f36  copy_in                        
+00009c2c  close                          
+00008f52  copy_in                        
 000025b0  cursector                      
-0000a14c  data_commandT1                 
-000093f8  dma_init                       
-0000a018  dma_rcv                        
-0000a2c6  dma_send                       
+0000a6ac  data_commandT1                 
+00009414  dma_init                       
+0000a034  dma_rcv                        
+0000a2aa  dma_send                       
 0000283e  errno                          
-00009d7e  exit                           
-0000a760  findchar                       
+00009d9a  exit                           
+0000a764  findchar                       
 000025c7  fl_sl                          
-00009258  fputc                          
-00008b10  fputs                          
-000094fc  free                           
-00009750  fseek                          
-0000a96e  halSPISetup                    
-0000a4d4  init                           
-0000a616  int_init                       
-0000a922  key_pressed                    
-0000a2fa  led_toggle                     
-0000a886  leds_init                      
-0000a93e  leds_off                       
-0000a946  leds_on                        
-0000a5cc  lseek                          
-0000a8c2  main                           
-00008fe8  malloc                         
-0000a77c  memccpy                        
-0000a89a  memchr                         
-0000a8d4  memcpy                         
-0000a8ae  memset                         
-0000a184  minit                          
-00009a0a  mmcCheckBusy                   
-0000a63a  mmcGetResponse                 
-0000a6a6  mmcGetXXResponse               
-00009886  mmcGoIdle                      
-00009e0c  mmcInit                        
-000095f6  mmcReadBlock                   
-00008408  mmcReadCardSize                
-00009c5a  mmcSendCmd                     
-00009ca4  mmcSetBlockLength              
-0000966e  mmcWriteBlock                  
-0000a52c  modem_down                     
-00009b1a  modem_reset_r                  
-0000a94e  modem_send_dataT1              
-00008bee  my_sprintf                     
-0000a44e  params_init                    
-0000a796  parse_bcl                      
-00009f5a  printf                         
-00009258  putc                           
+00009274  fputc                          
+00008b2c  fputs                          
+00009518  free                           
+0000976c  fseek                          
+0000a972  halSPISetup                    
+0000a4b8  init                           
+0000a5fa  int_init                       
+0000a926  key_pressed                    
+0000a2de  led_toggle                     
+0000a88a  leds_init                      
+0000a942  leds_off                       
+0000a94a  leds_on                        
+0000a5b0  lseek                          
+0000a8c6  main                           
+00009004  malloc                         
+0000a780  memccpy                        
+0000a89e  memchr                         
+0000a8d8  memcpy                         
+0000a8b2  memset                         
+0000a168  minit                          
+00009a26  mmcCheckBusy                   
+0000a61e  mmcGetResponse                 
+0000a68a  mmcGetXXResponse               
+000098a2  mmcGoIdle                      
+00009e28  mmcInit                        
+00009612  mmcReadBlock                   
+00008424  mmcReadCardSize                
+00009c76  mmcSendCmd                     
+00009cc0  mmcSetBlockLength              
+0000968a  mmcWriteBlock                  
+0000a510  modem_down                     
+00009b36  modem_reset_r                  
+0000a952  modem_send_dataT1              
+00008c0a  my_sprintf                     
+0000a432  params_init                    
+0000a79a  parse_bcl                      
+00009f76  printf                         
+00009274  putc                           
 000025c8  reload                         
-0000a556  remove                         
+0000a53a  remove                         
 000025c9  restart                        
 000025b2  rlen                           
 000025b4  sd_data                        
-0000936e  sdcard_init                    
+0000938a  sdcard_init                    
 000025ca  send_enabled                   
 000025b6  serial                         
-0000a708  set_uart_57600                 
-0000a6c8  set_uart_9600                  
-00008da6  setvbuf                        
-0000a394  spiReadFrame                   
-0000a92c  spiSendByte                    
-0000a32e  spiSendFrame                   
+0000a70c  set_uart_57600                 
+0000a6cc  set_uart_9600                  
+00008dc2  setvbuf                        
+0000a378  spiReadFrame                   
+0000a930  spiSendByte                    
+0000a312  spiSendFrame                   
 000025cb  spi_bitbang_in_data            
-00009e52  spi_bitbang_inout              
-0000a7b0  spi_clear_buff                 
-0000a726  spi_dma_rcv                    
+00009e6e  spi_bitbang_inout              
+0000a7b4  spi_clear_buff                 
+0000a72a  spi_dma_rcv                    
 000025cc  spi_dma_rxbuf_flag             
-000091c8  spi_init                       
+000091e4  spi_init                       
 000025b8  spi_rcv_cnt                    
-00009f9a  spi_task                       
+00009fb6  spi_task                       
 000025cd  spilen                         
 000025ba  spitimer                       
-0000a7ca  strchr                         
-0000a82c  strcmp                         
-0000a8f6  strcpy                         
-0000a906  strlen                         
-0000a500  strncpy                        
-0000a228  strstr                         
-00008274  strtoul                        
+0000a7ce  strchr                         
+0000a830  strcmp                         
+0000a8fa  strcpy                         
+0000a90a  strlen                         
+0000a4e4  strncpy                        
+0000a20c  strstr                         
+00008290  strtoul                        
 000025bc  t1                             
 000025be  timerreload                    
 000025ce  tx_enable                      
 00002582  uState                         
-0000947a  uStateInit                     
-0000a870  uStateKeep                     
+00009496  uStateInit                     
+0000a874  uStateKeep                     
 0000222a  ulifo                          
-0000a556  unlink                         
+0000a53a  unlink                         
 000025c0  used_len                       
-0000a6e8  wait_ms                        
-0000a914  wd_reset                       
-0000a682  write                          
+0000a6ec  wait_ms                        
+0000a918  wd_reset                       
+0000a666  write                          
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2230,184 +2231,184 @@ address   name
 00002bac  _stack                         
 00002bfc  __STACK_END                    
 00008000  ReloadModem                    
-00008274  strtoul                        
-00008408  mmcReadCardSize                
-00008596  SParseBuffer                   
-000086f0  SendData                       
-00008938  __TI_decompress_lzss           
-00008a26  ParseBuffer                    
-00008b10  fputs                          
-00008bee  my_sprintf                     
-00008ccc  __TI_printfi_minimal           
-00008da6  setvbuf                        
-00008f36  copy_in                        
-00008fe8  malloc                         
-00009096  HOSTlseek                      
-00009132  _auto_init_hold_wdt            
-000091c8  spi_init                       
-00009258  fputc                          
-00009258  putc                           
-000092e4  Lifo_Get                       
-0000936e  sdcard_init                    
-000093f8  dma_init                       
-0000947a  uStateInit                     
-000094fc  free                           
-0000957c  __TI_wrt_ok                    
-000095f6  mmcReadBlock                   
-0000966e  mmcWriteBlock                  
-000096e6  HOSTrename                     
-00009750  fseek                          
-000097ba  __TI_closefile                 
-00009822  HOSTopen                       
-00009886  mmcGoIdle                      
-000098ea  __TI_doflush                   
-0000994c  HOSTwrite                      
-000099ac  HOSTread                       
-00009a0a  mmcCheckBusy                   
-00009a68  Lifo_Add                       
-00009ac2  __mspabi_divul                 
-00009ac2  __mspabi_remul                 
-00009b1a  modem_reset_r                  
-00009bc4  UseLifo                        
-00009c10  close                          
-00009c5a  mmcSendCmd                     
-00009ca4  mmcSetBlockLength              
-00009cee  AddSdCard                      
-00009d36  GetSdCard                      
-00009d7e  exit                           
-00009dc6  HOSTclose                      
-00009e0c  mmcInit                        
-00009e52  spi_bitbang_inout              
-00009e96  HOSTunlink                     
-00009ed8  DMA_ISR                        
-00009f1a  __memcpy_far                   
-00009f5a  printf                         
-00009f9a  spi_task                       
-00009fda  __TI_zero_init                 
-0000a018  dma_rcv                        
-0000a056  __mspabi_sral_15               
-0000a05a  __mspabi_sral_14               
-0000a05e  __mspabi_sral_13               
-0000a062  __mspabi_sral_12               
-0000a066  __mspabi_sral_11               
-0000a06a  __mspabi_sral_10               
-0000a06e  __mspabi_sral_9                
-0000a072  __mspabi_sral_8                
-0000a076  __mspabi_sral_7                
-0000a07a  __mspabi_sral_6                
-0000a07e  __mspabi_sral_5                
-0000a082  __mspabi_sral_4                
-0000a086  __mspabi_sral_3                
-0000a08a  __mspabi_sral_2                
-0000a08e  __mspabi_sral_1                
-0000a094  __mspabi_slll_15               
-0000a098  __mspabi_slll_14               
-0000a09c  __mspabi_slll_13               
-0000a0a0  __mspabi_slll_12               
-0000a0a4  __mspabi_slll_11               
-0000a0a8  __mspabi_slll_10               
-0000a0ac  __mspabi_slll_9                
-0000a0b0  __mspabi_slll_8                
-0000a0b4  __mspabi_slll_7                
-0000a0b8  __mspabi_slll_6                
-0000a0bc  __mspabi_slll_5                
-0000a0c0  __mspabi_slll_4                
-0000a0c4  __mspabi_slll_3                
-0000a0c8  __mspabi_slll_2                
-0000a0cc  __mspabi_slll_1                
-0000a0d2  __mspabi_srll_15               
-0000a0d6  __mspabi_srll_14               
-0000a0da  __mspabi_srll_13               
-0000a0de  __mspabi_srll_12               
-0000a0e2  __mspabi_srll_11               
-0000a0e6  __mspabi_srll_10               
-0000a0ea  __mspabi_srll_9                
-0000a0ee  __mspabi_srll_8                
-0000a0f2  __mspabi_srll_7                
-0000a0f6  __mspabi_srll_6                
-0000a0fa  __mspabi_srll_5                
-0000a0fe  __mspabi_srll_4                
-0000a102  __mspabi_srll_3                
-0000a106  __mspabi_srll_2                
-0000a10a  __mspabi_srll_1                
-0000a110  __TI_decompress_none           
-0000a14c  data_commandT1                 
-0000a184  minit                          
-0000a1bc  AddSdCardBase                  
-0000a1f2  SBGet                          
-0000a228  strstr                         
-0000a25e  GetSdCardBase                  
-0000a292  TIMER1_A0_ISR                  
-0000a2c6  dma_send                       
-0000a2fa  led_toggle                     
-0000a32e  spiSendFrame                   
-0000a362  __TI_cleanup                   
-0000a394  spiReadFrame                   
-0000a3c4  PortsInit                      
-0000a3f2  __TI_writemsg                  
-0000a41c  C$$IO$$                        
-0000a44e  params_init                    
-0000a47c  CheckCrc                       
-0000a4a8  __TI_readmsg                   
-0000a4d4  init                           
-0000a500  strncpy                        
-0000a52c  modem_down                     
-0000a556  remove                         
-0000a556  unlink                         
-0000a580  SBAdd                          
-0000a5a6  SBInit                         
-0000a5cc  lseek                          
-0000a5f2  Lifo_Used                      
-0000a616  int_init                       
-0000a63a  mmcGetResponse                 
-0000a65e  __mspabi_mpyl_f5hw             
-0000a682  write                          
-0000a6a6  mmcGetXXResponse               
-0000a6c8  set_uart_9600                  
-0000a6e8  wait_ms                        
-0000a708  set_uart_57600                 
-0000a726  spi_dma_rcv                    
-0000a744  _c_int00_noargs                
-0000a760  findchar                       
-0000a77c  memccpy                        
-0000a796  parse_bcl                      
-0000a7b0  spi_clear_buff                 
-0000a7ca  strchr                         
-0000a7e4  Modify                         
-0000a7fc  SBUsed                         
-0000a814  __mspabi_mpyi_f5hw             
-0000a82c  strcmp                         
-0000a844  BInit                          
-0000a85a  __mspabi_divu                  
-0000a85a  __mspabi_remu                  
-0000a870  uStateKeep                     
-0000a886  leds_init                      
-0000a89a  memchr                         
-0000a8ae  memset                         
-0000a8c2  main                           
-0000a8d4  memcpy                         
-0000a8e6  __mspabi_srll                  
-0000a8f6  strcpy                         
-0000a906  strlen                         
-0000a914  wd_reset                       
-0000a922  key_pressed                    
-0000a92c  spiSendByte                    
-0000a936  __TI_ISR_TRAP                  
-0000a93e  leds_off                       
-0000a946  leds_on                        
-0000a94e  modem_send_dataT1              
-0000a95c  C$$EXIT                        
-0000a95c  abort                          
-0000a966  _system_pre_init               
-0000a96a  _nop                           
-0000a96c  _system_post_cinit             
-0000a96e  halSPISetup                    
-0000a970  _ctypes_                       
-0000ac1c  OK_STR                         
-0000ac74  __TI_Handler_Table_Base        
-0000ac80  __TI_Handler_Table_Limit       
-0000ac86  __TI_CINIT_Base                
-0000ac96  __TI_CINIT_Limit               
+00008290  strtoul                        
+00008424  mmcReadCardSize                
+000085b2  SParseBuffer                   
+0000870c  SendData                       
+00008954  __TI_decompress_lzss           
+00008a42  ParseBuffer                    
+00008b2c  fputs                          
+00008c0a  my_sprintf                     
+00008ce8  __TI_printfi_minimal           
+00008dc2  setvbuf                        
+00008f52  copy_in                        
+00009004  malloc                         
+000090b2  HOSTlseek                      
+0000914e  _auto_init_hold_wdt            
+000091e4  spi_init                       
+00009274  fputc                          
+00009274  putc                           
+00009300  Lifo_Get                       
+0000938a  sdcard_init                    
+00009414  dma_init                       
+00009496  uStateInit                     
+00009518  free                           
+00009598  __TI_wrt_ok                    
+00009612  mmcReadBlock                   
+0000968a  mmcWriteBlock                  
+00009702  HOSTrename                     
+0000976c  fseek                          
+000097d6  __TI_closefile                 
+0000983e  HOSTopen                       
+000098a2  mmcGoIdle                      
+00009906  __TI_doflush                   
+00009968  HOSTwrite                      
+000099c8  HOSTread                       
+00009a26  mmcCheckBusy                   
+00009a84  Lifo_Add                       
+00009ade  __mspabi_divul                 
+00009ade  __mspabi_remul                 
+00009b36  modem_reset_r                  
+00009be0  UseLifo                        
+00009c2c  close                          
+00009c76  mmcSendCmd                     
+00009cc0  mmcSetBlockLength              
+00009d0a  AddSdCard                      
+00009d52  GetSdCard                      
+00009d9a  exit                           
+00009de2  HOSTclose                      
+00009e28  mmcInit                        
+00009e6e  spi_bitbang_inout              
+00009eb2  HOSTunlink                     
+00009ef4  DMA_ISR                        
+00009f36  __memcpy_far                   
+00009f76  printf                         
+00009fb6  spi_task                       
+00009ff6  __TI_zero_init                 
+0000a034  dma_rcv                        
+0000a072  __mspabi_sral_15               
+0000a076  __mspabi_sral_14               
+0000a07a  __mspabi_sral_13               
+0000a07e  __mspabi_sral_12               
+0000a082  __mspabi_sral_11               
+0000a086  __mspabi_sral_10               
+0000a08a  __mspabi_sral_9                
+0000a08e  __mspabi_sral_8                
+0000a092  __mspabi_sral_7                
+0000a096  __mspabi_sral_6                
+0000a09a  __mspabi_sral_5                
+0000a09e  __mspabi_sral_4                
+0000a0a2  __mspabi_sral_3                
+0000a0a6  __mspabi_sral_2                
+0000a0aa  __mspabi_sral_1                
+0000a0b0  __mspabi_slll_15               
+0000a0b4  __mspabi_slll_14               
+0000a0b8  __mspabi_slll_13               
+0000a0bc  __mspabi_slll_12               
+0000a0c0  __mspabi_slll_11               
+0000a0c4  __mspabi_slll_10               
+0000a0c8  __mspabi_slll_9                
+0000a0cc  __mspabi_slll_8                
+0000a0d0  __mspabi_slll_7                
+0000a0d4  __mspabi_slll_6                
+0000a0d8  __mspabi_slll_5                
+0000a0dc  __mspabi_slll_4                
+0000a0e0  __mspabi_slll_3                
+0000a0e4  __mspabi_slll_2                
+0000a0e8  __mspabi_slll_1                
+0000a0ee  __mspabi_srll_15               
+0000a0f2  __mspabi_srll_14               
+0000a0f6  __mspabi_srll_13               
+0000a0fa  __mspabi_srll_12               
+0000a0fe  __mspabi_srll_11               
+0000a102  __mspabi_srll_10               
+0000a106  __mspabi_srll_9                
+0000a10a  __mspabi_srll_8                
+0000a10e  __mspabi_srll_7                
+0000a112  __mspabi_srll_6                
+0000a116  __mspabi_srll_5                
+0000a11a  __mspabi_srll_4                
+0000a11e  __mspabi_srll_3                
+0000a122  __mspabi_srll_2                
+0000a126  __mspabi_srll_1                
+0000a12c  __TI_decompress_none           
+0000a168  minit                          
+0000a1a0  AddSdCardBase                  
+0000a1d6  SBGet                          
+0000a20c  strstr                         
+0000a242  GetSdCardBase                  
+0000a276  TIMER1_A0_ISR                  
+0000a2aa  dma_send                       
+0000a2de  led_toggle                     
+0000a312  spiSendFrame                   
+0000a346  __TI_cleanup                   
+0000a378  spiReadFrame                   
+0000a3a8  PortsInit                      
+0000a3d6  __TI_writemsg                  
+0000a400  C$$IO$$                        
+0000a432  params_init                    
+0000a460  CheckCrc                       
+0000a48c  __TI_readmsg                   
+0000a4b8  init                           
+0000a4e4  strncpy                        
+0000a510  modem_down                     
+0000a53a  remove                         
+0000a53a  unlink                         
+0000a564  SBAdd                          
+0000a58a  SBInit                         
+0000a5b0  lseek                          
+0000a5d6  Lifo_Used                      
+0000a5fa  int_init                       
+0000a61e  mmcGetResponse                 
+0000a642  __mspabi_mpyl_f5hw             
+0000a666  write                          
+0000a68a  mmcGetXXResponse               
+0000a6ac  data_commandT1                 
+0000a6cc  set_uart_9600                  
+0000a6ec  wait_ms                        
+0000a70c  set_uart_57600                 
+0000a72a  spi_dma_rcv                    
+0000a748  _c_int00_noargs                
+0000a764  findchar                       
+0000a780  memccpy                        
+0000a79a  parse_bcl                      
+0000a7b4  spi_clear_buff                 
+0000a7ce  strchr                         
+0000a7e8  Modify                         
+0000a800  SBUsed                         
+0000a818  __mspabi_mpyi_f5hw             
+0000a830  strcmp                         
+0000a848  BInit                          
+0000a85e  __mspabi_divu                  
+0000a85e  __mspabi_remu                  
+0000a874  uStateKeep                     
+0000a88a  leds_init                      
+0000a89e  memchr                         
+0000a8b2  memset                         
+0000a8c6  main                           
+0000a8d8  memcpy                         
+0000a8ea  __mspabi_srll                  
+0000a8fa  strcpy                         
+0000a90a  strlen                         
+0000a918  wd_reset                       
+0000a926  key_pressed                    
+0000a930  spiSendByte                    
+0000a93a  __TI_ISR_TRAP                  
+0000a942  leds_off                       
+0000a94a  leds_on                        
+0000a952  modem_send_dataT1              
+0000a960  C$$EXIT                        
+0000a960  abort                          
+0000a96a  _system_pre_init               
+0000a96e  _nop                           
+0000a970  _system_post_cinit             
+0000a972  halSPISetup                    
+0000aa82  _ctypes_                       
+0000ac52  OK_STR                         
+0000acaa  __TI_Handler_Table_Base        
+0000acb6  __TI_Handler_Table_Limit       
+0000acbc  __TI_CINIT_Base                
+0000accc  __TI_CINIT_Limit               
 0000ffda  __TI_int45                     
 0000ffdc  __TI_int46                     
 0000ffde  __TI_int47                     

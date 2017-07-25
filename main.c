@@ -103,7 +103,8 @@ void int_init()
 {
     WDTCTL = WDTPW + WDTHOLD;
     TA1CCTL0 = CCIE;                          // CCR0 interrupt enabled
-    TA1CCR0 = TIMER_A_16; // to have 16ms period
+  //  TA1CCR0 = TIMER_A_16; // to have 16ms period
+    TA1CCR0 = (unsigned)TIMER_A_50; // to have 16ms period
     TA1CTL = TASSEL_2 + MC_2 + TACLR;         // SMCLK, contmode, clear TAR
     t1 = 0;
      __bis_SR_register(GIE);
@@ -163,11 +164,12 @@ int main(void)
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void TIMER1_A0_ISR(void)
 {
-  t1 += 16;
-  if(timerreload > 16) timerreload -= 16;
+  t1 += 50; //16;
+  if(timerreload > 50) timerreload -= 50;
   else timerreload = 0;
-  spitimer  += 16;
-  TA1CCR0 += TIMER_A_16;                         // Add Offset to CCR0
+  spitimer  += 50; //16;
+ // TA1CCR0 += TIMER_A_16;                      // Add Offset to CCR0
+  TA1CCR0 = TIMER_A_50;                         // Add Offset to CCR0
   spi_task();
   wd_reset();
 }

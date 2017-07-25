@@ -11,12 +11,17 @@ char data_commandT1(char * Data, int tm , char type, int len )
     ret = dma_rcv(type);
     BInit(); // prepare receive buffer
     dma_send(Data, len);
-    if(type != 14)  //if no auth to do not operating to message "connect"
+/*
+//____________________test
+  //  if(type != 14)  //if no auth to do not operating to message "connect"
+    if((type != 14) && (type != 9))  //if no auth to do not operating to message "connect"
     {
     DMA1CTL &= ~DMAEN;
-    DMA1SZ = (unsigned short)1; //to have interrupt fom first received symbol
+    DMA1SZ = (unsigned short)1; //to have interrupt from first received symbol
     DMA1CTL |= DMAEN;
     }
+//____________________test
+    */
 
 #ifdef SIML
   switch (type)
@@ -99,7 +104,7 @@ void ReloadModem(void)
     static unsigned char wd;
     static unsigned char step = 0;
   //  int i;
-    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','4',0};  //addctrl-z && whu 2 ?
+    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','5',0};  //addctrl-z && whu 2 ?
     if(timerreload)
     {
       return;
@@ -125,17 +130,17 @@ void ReloadModem(void)
     case 13:   modem_send_dataT1("ATE0\r", 6, 13); timerreload = 100; break;
     case 14:   modem_send_dataT1("AT+CIPSTART=\"TCP\",\"regatav6.ru\",\"60009\"\r", 47, 14); timerreload = 5000; wd = 0;  break;
     case 15:   my_sprintf((unsigned char *)&auth[1], (unsigned short)serial);
-               modem_send_dataT1( auth, sizeof(auth), 9) ; timerreload = 3000; break;
+               modem_send_dataT1( auth, sizeof(auth), 9) ; timerreload = 5000; break;
     case 16:   if(dma_rcv(10)) //check auth
                {
                   reload = 0;
-           //       printf("\n\r autorize ok\n\r");
+                  printf("\n\r autorize ok\n\r");
                   auth_flag = 1;
                }
                else
                {
                   if(wd) {step = 14; wd--;} //try some times
-            //      printf("\n\r wd = %d autorize wrong .?\n\r", wd);
+                 printf("\n\r wd = %d autorize wrong .?\n\r", wd);
                }
                break;
     default :  break;

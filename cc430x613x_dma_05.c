@@ -22,6 +22,7 @@ char dma_rcv(char type)
    if(val < RCV_BUFF_SIZE)
     {
       rlen = (unsigned short)RCV_BUFF_SIZE - val; //4 -for test
+  //    printf("\n\r rlen = %d", rlen);
       ret = ParseBuffer(type);
       __data16_write_addr((unsigned short) &DMA1DA,(unsigned long) &RcvBuff[0]);
       DMA1SZ = (unsigned short)RCV_BUFF_SIZE;
@@ -83,7 +84,8 @@ void dma_init(void)
   __data16_write_addr((unsigned short) &DMA1DA,(unsigned long) &RcvBuff[0]);
                                             // Destination single address
   DMA1SZ = (unsigned short)RCV_BUFF_SIZE;                               // Block size
-  DMA1CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_4 + DMAEN+DMAIE;  // +enable dma1 interrupt repeated single transfer
+//  DMA1CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_4 + DMAEN+DMAIE;  // +enable dma1 interrupt repeated single transfer
+  DMA1CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_0 + DMAEN+DMAIE;  // +enable dma1 interrupt single transfer
 }
 #ifdef SIML
 void sendtext(char * Data)

@@ -152,7 +152,8 @@ extern void wd_reset(void);
 #define LED_SDCARD  (2)
 #define ON          (1)
 #define OFF         (0)
-#define TIMER_A_16    (1046 * 16)
+//#define TIMER_A_16    (1046 * 16)
+#define TIMER_A_50    (52300) //1046*50
 
 extern void set_uart_38400(void);
 extern void set_uart_9600(void);
