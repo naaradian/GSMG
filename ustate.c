@@ -1,12 +1,12 @@
 #include "deffs.h"
 
- struct GSM_STATE
- {
+struct GSM_STATE
+{
      unsigned long signature;
      unsigned long restarts;
      unsigned short current_sector;
      unsigned short sd_data;
- };
+};
 
 union UGSM_STATE
 {

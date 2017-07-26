@@ -84,7 +84,6 @@ void dma_init(void)
   __data16_write_addr((unsigned short) &DMA1DA,(unsigned long) &RcvBuff[0]);
                                             // Destination single address
   DMA1SZ = (unsigned short)RCV_BUFF_SIZE;                               // Block size
-//  DMA1CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_4 + DMAEN+DMAIE;  // +enable dma1 interrupt repeated single transfer
   DMA1CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_0 + DMAEN+DMAIE;  // +enable dma1 interrupt single transfer
 }
 #ifdef SIML

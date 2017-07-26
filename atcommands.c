@@ -103,8 +103,7 @@ void ReloadModem(void)
 {
     static unsigned char wd;
     static unsigned char step = 0;
-  //  int i;
-    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','5',0};  //addctrl-z && whu 2 ?
+    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','6',0};  //addctrl-z && whu 2 ?
     if(timerreload)
     {
       return;
@@ -134,13 +133,17 @@ void ReloadModem(void)
     case 16:   if(dma_rcv(10)) //check auth
                {
                   reload = 0;
+#ifdef DPRINT
                   printf("\n\r autorize ok\n\r");
+#endif
                   auth_flag = 1;
                }
                else
                {
                   if(wd) {step = 14; wd--;} //try some times
+#ifdef DPRINT
                  printf("\n\r wd = %d autorize wrong .?\n\r", wd);
+#endif
                }
                break;
     default :  break;

@@ -6,11 +6,8 @@
  */
 #ifndef DEFFS_H_
 #define DEFFS_H_
-
-
 #include <stdlib.h>
 #include <string.h>
-
 
 //#define SEND_6
 //#define SEND_DIFF
@@ -23,7 +20,7 @@
 //#define DAY_SHEDULE
 #define CONTINUOUS_SEND
 
-#define DPRINT
+//#define DPRINT
 
 #ifdef DPRINT
 #include <stdio.h>
@@ -31,8 +28,6 @@
 #else
 #define MAX_GET_LiFO     (40)
 #endif
-
-
 
 //#define GPS_PLATA
 //#define SIML   //modem channel
@@ -54,8 +49,6 @@ extern  unsigned char connect_flag;
 #define SEND_DATA_SIZE   (25)  //size for server 6 longs + 1 byte type = 1
 #endif
 #define SEND_DATA_SIZE_DIFF (6)   //diff frame 5 bytes + 1 byte of type = 0
-
-
 
 #define TX_SEND_SIZE     (SEND_DATA_SIZE * MAX_GET_LiFO)
 
@@ -152,10 +145,7 @@ extern void wd_reset(void);
 #define LED_SDCARD  (2)
 #define ON          (1)
 #define OFF         (0)
-//#define TIMER_A_16    (1046 * 16)
 #define TIMER_A_50    (52300) //1046*50
-
-extern void set_uart_38400(void);
 extern void set_uart_9600(void);
 extern unsigned char restart;
 #define START_SECTOR    (1)  //zero sector use for keep cursector
@@ -174,7 +164,6 @@ extern unsigned char reload;
 extern unsigned int timerreload;
 extern char TestData1[TX_SEND_SIZE]; // static to property resend data
 extern char KeepTestData1[TX_SEND_SIZE];  //buffer for sended data
-char * CurrentKeep;
 extern unsigned short used_len;
 extern unsigned char auth_flag;
 extern void leds_on();

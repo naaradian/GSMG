@@ -1,12 +1,12 @@
 #include "deffs.h"
 #include <msp430.h>
-
 char SRcvBuff[SRCV_BUFF_SIZE];
 signed int SBuffSize;
 signed int  SHead;
 signed int STail;
 signed int LastHead;
 char fl_sl;
+
 void SBInit()
 {
    SBuffSize = SRCV_BUFF_SIZE;  //have variable  sizes of buffer!!!!!!!
@@ -23,7 +23,8 @@ void SBAdd(char elem)
   SHead++;
   if(SHead == SBuffSize) SHead = 0;
 }
- char SBGet()
+
+char SBGet()
 {
    if(LastHead)  LastHead --;
    STail++;    //t
@@ -37,8 +38,9 @@ void SBAdd(char elem)
    return SRcvBuff[STail-1];   //t
   }
 }
- char SBGetLast()
- {
+
+char SBGetLast()
+{
     if(LastHead)  LastHead --;
     SHead--;    //t
      if(SHead  < 0)
@@ -50,8 +52,9 @@ void SBAdd(char elem)
    {
     return SRcvBuff[SHead];   //t
    }
- }
- unsigned SBUsed()
+}
+
+unsigned SBUsed()
 {
   int n = SHead - STail;
   if( n >= 0 ) return (unsigned)n;
@@ -61,8 +64,9 @@ void SBAdd(char elem)
  {
   return (unsigned)(LastHead);
  }
- unsigned char Modify(unsigned char byte)
- {
+
+unsigned char Modify(unsigned char byte)
+{
      unsigned char ret;
      switch(byte)
      {
@@ -70,9 +74,10 @@ void SBAdd(char elem)
          case '1': ret = '$'; break;
      }
       return ret;
- }
- char SParseBuffer(char type)
- {
+}
+
+char SParseBuffer(char type)
+{
    char ret = 0;
    static int cnt;
    char b;

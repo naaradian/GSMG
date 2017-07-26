@@ -1,7 +1,5 @@
 #include "deffs.h"
-
 const char OK_STR[] = {'O','K', 0};
-
 char RcvBuff[RCV_BUFF_SIZE];
 unsigned short rlen;
 
@@ -12,14 +10,14 @@ void BInit()
 }
 
 void parse_bcl(char* Buff)
- {
+{
     Buff = strchr(Buff, ',');
     Buff++;
     bcl = (char)strtoul(Buff, NULL, 10);
 }
 
- char findchar(char s, char * Buff,int len)
- {
+char findchar(char s, char * Buff,int len)
+{
      int i;
      for(i = 0; i < len; i++)
      {
@@ -29,10 +27,10 @@ void parse_bcl(char* Buff)
          }
      }
      return 0;
- }
+}
 
- char ParseBuffer(char type)
- {
+char ParseBuffer(char type)
+{
    char ret = 0;
 #ifdef DPRINT
    int i;
@@ -76,5 +74,3 @@ void parse_bcl(char* Buff)
   }//if rlen
 return ret;
 }
-
-

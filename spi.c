@@ -5,10 +5,7 @@
 #include "deffs.h"
 
 #ifdef SPI_DMA
-unsigned char MST_Data,SLV_Data;
 char SPI_RX_Buff0[SRCV_BUFF_SIZE];
-unsigned short spi_rcv_cnt;
-char spi_dma_rxbuf_flag;
 
 void spi_clear_buff(char * Buff, unsigned short len)
 {
@@ -140,16 +137,12 @@ printf("\n\r spi init");
   __data16_write_addr((unsigned short) &DMA2SA,(unsigned long) &UCB0RXBUF);
   __data16_write_addr((unsigned short) &DMA2DA,(unsigned long) &SPI_RX_Buff0[0]);
   DMA2SZ = INT_SIZE;                               // Block size// Block size
-   spi_dma_rxbuf_flag = 0;
-   spi_rcv_cnt = 0;
 
 #ifdef USE_SPI_DMA_INTERRUPT
    DMA2CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_0+DMAEN  + DMAIE;  // dst increment  ???
 #else
    DMA2CTL = DMADSTINCR_3+DMASBDB+DMALEVEL+DMADT_0+DMAEN;
 #endif
-  MST_Data = 0x00;                          // Initialize data values
-  SLV_Data = 0x00;                          //
 #endif
 }
 
@@ -287,7 +280,7 @@ __interrupt void DMA_ISR(void)
             DMA1SZ = (unsigned short)RCV_BUFF_SIZE; //to have interrupt fom first received symbol
             DMA1CTL |= DMAEN;
             break;                              // DMA1IFG = DMA Channel 1
-    case 6: spitimer = SPI_TIME;
+    case 6: spitimer = SPI_TIME;            //to momentally  data operating
             spilen =   INT_SIZE;
             break;                          // DMA2IFG = DMA Channel 2
     case 8: break;                          // DMA3IFG = DMA Channel 3

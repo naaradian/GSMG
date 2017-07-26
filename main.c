@@ -103,8 +103,7 @@ void int_init()
 {
     WDTCTL = WDTPW + WDTHOLD;
     TA1CCTL0 = CCIE;                          // CCR0 interrupt enabled
-  //  TA1CCR0 = TIMER_A_16; // to have 16ms period
-    TA1CCR0 = (unsigned)TIMER_A_50; // to have 16ms period
+    TA1CCR0 = TIMER_A_50; // to have 50 ms interrupt period
     TA1CTL = TASSEL_2 + MC_2 + TACLR;         // SMCLK, contmode, clear TAR
     t1 = 0;
      __bis_SR_register(GIE);
