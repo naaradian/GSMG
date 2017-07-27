@@ -20,7 +20,7 @@
 //#define DAY_SHEDULE
 #define CONTINUOUS_SEND
 
-//#define DPRINT
+#define DPRINT
 
 #ifdef DPRINT
 #include <stdio.h>
@@ -179,5 +179,7 @@ extern void modem_down(void);
 extern unsigned char need_set_alarm;
 extern unsigned char tx_enable;
 extern char dma_rcv_int(char);
+//extern unsigned char gtype;
+extern unsigned short setted_size;
 
 #endif /* DEFFS_H_ */

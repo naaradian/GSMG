@@ -72,5 +72,6 @@ char ParseBuffer(char type)
         } //for
 #endif
   }//if rlen
+   BInit();
 return ret;
 }

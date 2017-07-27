@@ -266,18 +266,19 @@ __interrupt void USCI_B0_ISR(void)
 #pragma vector=DMA_VECTOR
 __interrupt void DMA_ISR(void)
 {
-//    static int cnt = 0;
+  //  static int cnt = 0;
  switch(__even_in_range(DMAIV,16))
   {
     case 0: break;
     case 2: tx_enable = 1;                  // DMA0IFG = DMA Channel 0
             break;
     case 4:
-     //       cnt++;
-       //     printf("i%d", cnt);
+      //      cnt++;
+     //       printf("i%d", cnt);
+//            dma_rcv(gtype); BInit(); // prepare receive buffer
             timerreload = 50;
             DMA1CTL &= ~DMAEN;
-            DMA1SZ = (unsigned short)RCV_BUFF_SIZE; //to have interrupt fom first received symbol
+            DMA1SZ = (unsigned short)RCV_BUFF_SIZE;  setted_size = (unsigned short)RCV_BUFF_SIZE;//to have interrupt fom first received symbol
             DMA1CTL |= DMAEN;
             break;                              // DMA1IFG = DMA Channel 1
     case 6: spitimer = SPI_TIME;            //to momentally  data operating

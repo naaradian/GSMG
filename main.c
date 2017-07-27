@@ -19,6 +19,8 @@ unsigned char spilen;
 unsigned char send_enabled;
 unsigned char need_set_alarm;
 unsigned char tx_enable;
+//unsigned char gtype;
+unsigned short setted_size;
 
 #ifdef SPISIML
 long dt;
