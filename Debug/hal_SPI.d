@@ -12,8 +12,6 @@ hal_SPI.obj: ../deffs.h
 hal_SPI.obj: C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdlib.h
 hal_SPI.obj: C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/linkage.h
 hal_SPI.obj: C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/string.h
-hal_SPI.obj: C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdio.h
-hal_SPI.obj: C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdarg.h
 
 ../hal_SPI.c: 
 ../hal_SPI.h: 
@@ -27,5 +25,3 @@ C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/intrinsics_le
 C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdlib.h: 
 C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/linkage.h: 
 C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/string.h: 
-C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdio.h: 
-C:/ti/ccs700/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/include/stdarg.h: 

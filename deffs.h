@@ -17,10 +17,15 @@
 
 #define USE_SPI_DMA_INTERRUPT
 
-//#define DAY_SHEDULE
-#define CONTINUOUS_SEND
 
-#define DPRINT
+//if not setted DAY_SHEDULE and CONTINOUS_SEND  make d shedule  "every times in min used time :  MIN_ALARM"
+//in day shedule used time MIN_ALARM and HOUR_ALARM
+#define DAY_SHEDULE
+//#define CONTINUOUS_SEND
+
+//#define VIEW_TIME  //for debug only to check setted day time and current device time
+
+//#define DPRINT
 
 #ifdef DPRINT
 #include <stdio.h>

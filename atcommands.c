@@ -98,7 +98,7 @@ void ReloadModem(void)
 {
     static unsigned char wd;
     static unsigned char step = 0;
-    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','7',0};  //addctrl-z && whu 2 ?
+    char auth[] =   {6,'X','X','X','X','#','1',6,'M','S','P','4','3','0',7,'V','1','7','0','7', '2','8',0};  //addctrl-z && whu 2 ?
     if(timerreload)
     {
       return;

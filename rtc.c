@@ -6,15 +6,19 @@
 #ifndef CONTINUOUS_SEND
 void rtc_init(void)
 {
+
   RTCCTL01 |= RTCMODE  | RTCAIE; //calendar mode; do not use rtcrdyie every sec interrupt
+#ifdef VIEW_TIME
+  RTCCTL01 |= RTCRDYIE;//for debug to view time every sec
+#endif
   RTCCTL01 |= RTCHOLD; // RTC hold
   // Set any time
   RTCYEAR = 2017;
   RTCMON = 7;
-  RTCDAY = 11;
-  RTCDOW = 1;
-  RTCHOUR = 18;
-  RTCMIN = 29;
+  RTCDAY = 28;
+  RTCDOW = 5;
+  RTCHOUR = 9;
+  RTCMIN = 1;
   RTCSEC = 0;
 
 #ifndef DAY_SHEDULE
@@ -74,9 +78,16 @@ void correct_rtc(char * pepoch)
 #pragma vector=RTC_VECTOR
 __interrupt void RTC_ISR(void)
 {
+#ifdef VIEW_TIME
+#ifdef DPRINT
     static int cnt = 0;
     cnt++;
-//    printf("\n\r rtc int %d ", cnt);
+    printf("\n\r rtc int %d ", cnt);
+    printf("  %d:%d:%d",RTCHOUR, RTCMIN,RTCSEC);
+    printf(" alarm :  %d:%d",HOUR_ALARM, MIN_ALARM);
+#endif
+#endif
+
   switch(__even_in_range(RTCIV,16))
   {
     case 0: break;                          // No interrupts
