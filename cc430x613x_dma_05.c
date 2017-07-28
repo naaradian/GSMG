@@ -19,12 +19,9 @@ char dma_rcv(char type)
    char ret = 0; //t
    DMA1CTL &= ~(DMAEN); //170412
    val = DMA1SZ;
-  // if(val < RCV_BUFF_SIZE)
    if(val < setted_size)
     {
-//      rlen = (unsigned short)RCV_BUFF_SIZE - val; //4 -for test
       rlen = (unsigned short)setted_size - val; //
- //     printf("\n\r rlen = %d", rlen);
       ret = ParseBuffer(type);
       __data16_write_addr((unsigned short) &DMA1DA,(unsigned long) &RcvBuff[0]);
       DMA1SZ = (unsigned short)RCV_BUFF_SIZE; setted_size = (unsigned short)RCV_BUFF_SIZE;

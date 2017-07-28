@@ -19,7 +19,6 @@ unsigned char spilen;
 unsigned char send_enabled;
 unsigned char need_set_alarm;
 unsigned char tx_enable;
-//unsigned char gtype;
 unsigned short setted_size;
 
 #ifdef SPISIML
@@ -165,12 +164,11 @@ int main(void)
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void TIMER1_A0_ISR(void)
 {
-  t1 += 50; //16;
+  t1 += 50;
   if(timerreload > 50) timerreload -= 50;
   else timerreload = 0;
-  spitimer  += 50; //16;
- // TA1CCR0 += TIMER_A_16;                      // Add Offset to CCR0
-  TA1CCR0 = TIMER_A_50;                         // Add Offset to CCR0
+  spitimer  += 50;
+  TA1CCR0 = TIMER_A_50;
   spi_task();
   wd_reset();
 }

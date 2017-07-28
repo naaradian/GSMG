@@ -8,21 +8,9 @@ char data_commandT1(char * Data, int tm , char type, int len )
     static char TData[]={0,0,0,0,0};
     static char TDataB[]="\n\r 12,34,5678 OK\n\r";
 #endif
-
-
-
-
-
     ret = dma_rcv(type);
- //   BInit(); // prepare receive buffer
-  //  dma_send(Data, len);
-
-//____________________test
-  //  if(type != 14)  //if no auth to do not operating to message "connect"
- //   gtype = type;
-    if((type != 14) && (type != 9)  && (type != 12)   && (type != 6))  //if no auth to do not operating to message "connect"
+     if((type != 14) && (type != 9)  && (type != 12)   && (type != 6))  //if no auth to do not operating to message "connect"
     {
- //       printf("\n\r set dmasz = 1");
     DMA1CTL &= ~DMAEN;
     DMA1SZ = (unsigned short)1;  setted_size = (unsigned short)1; //to have interrupt from first received symbol
     DMA1CTL |= DMAEN;
@@ -152,7 +140,6 @@ void ReloadModem(void)
                  printf("\n\r wd = %d autorize wrong .?\n\r", wd);
 #endif
                }
-            //   BInit(); // prepare receive buffer
                break;
     default :  break;
     }
@@ -184,7 +171,6 @@ void SendData(void)
     {
        if(Fill_lifo_data)
        {
-
   //      printf("\n\r Send Lifo Data To Modem Wrong %d" , ALARM_V - alarm_cnt);
           if((MAX_GET_LiFO * SEND_DATA_SIZE - used_len > SEND_DATA_SIZE) && (alarm_cnt < ALARM_V))
            {
@@ -228,8 +214,6 @@ void SendData(void)
      led_toggle(LED_MODEM);
      alarm_cnt = 0;
  }
- // BInit(); // prepare receive buffer
-
 
   if(auth_flag)
     {
